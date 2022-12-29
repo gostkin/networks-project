@@ -2,6 +2,7 @@
 #define UTILS_H
 
 #include <optional>
+#include <fstream>
 
 template <typename T>
 std::string GetString(const std::optional<T>& from) {
@@ -12,7 +13,8 @@ std::string GetString(const std::optional<T>& from) {
 }
 
 std::optional<std::string> GetToken(char *path) {
-    std::ifstream input_file(path, std::ios::in);
+    std::ifstream input_file;
+    input_file.open(path, std::ios::in);
     std::string token;
 
     if (input_file.is_open()) {

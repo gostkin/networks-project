@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 #include <optional>
 
 #include "bot_main.h"
