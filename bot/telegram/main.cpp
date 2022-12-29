@@ -4,8 +4,8 @@
 #include "bot_main.h"
 
 int main(int argc, char **argv) {
-    if (argc != 2) {
-        std::cerr << "Invalid arguments number" << std::endl;
+    if (argc != 3) {
+        std::cerr << "Usage: ./bot-run <token_file_path> <offset_backup_path>" << std::endl;
         return -1;
     }
 
@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
     auto config = std::make_shared<BotServerConfig>(
         tg::TelegramCredentials{token.value(),
                                 "https://api.telegram.org/"},
-        "backup_offset.data", NetworkMode::HTTPS);
+        argv[2], NetworkMode::HTTPS);
 
     BotServer server{config};
     server.Start();

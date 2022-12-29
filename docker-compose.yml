@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  weather_bot:
+    restart: unless-stopped
+
+    build:
+      context: ${TO_BASEPATH:-.}/
+      dockerfile: Dockerfile
+    volumes:
+      - ${TO_BASEPATH:-.}/config/:/app/config

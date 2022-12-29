@@ -1,4 +1,4 @@
-project(shad-cpp0)
+project(weather-bot)
 
 cmake_minimum_required(VERSION 3.8)
 
